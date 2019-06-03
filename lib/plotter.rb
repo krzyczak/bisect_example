@@ -7,7 +7,8 @@ class Plotter
     puts "Starting to plot images."
     @data.map do |dat|
       puts "--- Currently plotting: #{dat}"
-      File.open("./results/#{dat}.png", "w+") { |ff| ff.write("sdfsdfdssdfkhsdfkjsdhf-#{File.read("./ground_truth_plot.png")}") }
+      content = "sdfsdfdssdfkhsdfkjsdhf-#{File.read("./ground_truth_plot.png")}"
+      File.open("./results/#{dat}.png", "w+") { |ff| ff.write(content) }
     end
     puts "Finished plotting all plots."
   end
