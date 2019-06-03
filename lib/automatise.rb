@@ -1,3 +1,7 @@
 require "./lib/plotter.rb"
 
-Plotter.new(["data"]).plot
+require "json"
+
+config = JSON.parse(File.read("config.json"))
+
+Plotter.new(config["data"]).plot
